@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <!-- SEO Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="pageTitle">เครื่องคำนวณ BMI ออนไลน์ฟรี - ตรวจสุขภาพดัชนีมวลกาย รองรับ kg/lb</title>
-    <meta name="description" id="pageDescription" content="เครื่องคำนวณ BMI ออนไลน์ฟรี รองรับหน่วย kg/cm และ lb/ft/inch พร้อมกราฟแสดงผล ตารางเปรียบเทียบ และคำแนะนำเฉพาะบุคคล">
+    <meta name="description" id="pageDescription"
+        content="เครื่องคำนวณ BMI ออนไลน์ฟรี รองรับหน่วย kg/cm และ lb/ft/inch พร้อมกราฟแสดงผล ตารางเปรียบเทียบ และคำแนะนำเฉพาะบุคคล">
     <meta name="keywords" content="BMI, ดัชนีมวลกาย, คำนวณ BMI, ตรวจสุขภาพ, น้ำหนัก, ส่วนสูง, kg, lb, metric, imperial">
     <meta name="author" content="BMI Calculator Pro">
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" id="ogTitle" content="เครื่องคำนวณ BMI ออนไลน์ฟรี - รองรับ kg/lb">
-    <meta property="og:description" id="ogDescription" content="เครื่องคำนวณ BMI ครบครัน รองรับหน่วย kg/cm และ lb/ft/inch พร้อมกราฟแสดงผลและคำแนะนำเฉพาะบุคคล">
+    <meta property="og:description" id="ogDescription"
+        content="เครื่องคำนวณ BMI ครบครัน รองรับหน่วย kg/cm และ lb/ft/inch พร้อมกราฟแสดงผลและคำแนะนำเฉพาะบุคคล">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://via.placeholder.com/1200x630/4F46E5/FFFFFF?text=BMI+Calculator+Pro">
     <meta property="og:url" content="">
     <meta property="og:site_name" content="BMI Calculator Pro">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" id="twitterTitle" content="เครื่องคำนวณ BMI ออนไลน์ฟรี">
-    <meta name="twitter:description" id="twitterDescription" content="เครื่องคำนวณ BMI ครบครัน รองรับหน่วย kg/cm และ lb/ft/inch">
+    <meta name="twitter:description" id="twitterDescription"
+        content="เครื่องคำนวณ BMI ครบครัน รองรับหน่วย kg/cm และ lb/ft/inch">
     <meta name="twitter:image" content="https://via.placeholder.com/1200x630/4F46E5/FFFFFF?text=BMI+Calculator+Pro">
-    
+
     <!-- PWA Manifest -->
-    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIkJNSSBDYWxjdWxhdG9yIFBybyIsCiAgInNob3J0X25hbWUiOiAiQk1JIENhbGMiLAogICJkZXNjcmlwdGlvbiI6ICJBZHZhbmNlZCBCTUkgQ2FsY3VsYXRvciB3aXRoIE11bHRpLUxhbmd1YWdlIFN1cHBvcnQiLAogICJzdGFydF91cmwiOiAiLyIsCiAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiIzRGNDZFNSIsCiAgInRoZW1lX2NvbG9yIjogIiM0RjQ2RTUiLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUIzYVdSMGFEMGlOVEV5SWlCb1pXbG5hSFE5SWpVeE1pSWdkbWxsZDBKdmVEMGlNQ0F3SURJMU5pQXlOVFlpSUdacGJHdzlJaU0wUmpRMlJUVWlQZ29nSUNBZ1BHTnBjbU5zWlNCamVEMGlNVEk0SWlCamVUMGlNVEk0SWlCeVBTSTRNQ0lnWm1sc2JEMGlJell4TlRZMVJVVWlMejRLUEM5emRtYyssCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIKICAgIH0KICBdCn0=">
+    <link rel="manifest"
+        href="data:application/json;base64,ewogICJuYW1lIjogIkJNSSBDYWxjdWxhdG9yIFBybyIsCiAgInNob3J0X25hbWUiOiAiQk1JIENhbGMiLAogICJkZXNjcmlwdGlvbiI6ICJBZHZhbmNlZCBCTUkgQ2FsY3VsYXRvciB3aXRoIE11bHRpLUxhbmd1YWdlIFN1cHBvcnQiLAogICJzdGFydF91cmwiOiAiLyIsCiAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiIzRGNDZFNSIsCiAgInRoZW1lX2NvbG9yIjogIiM0RjQ2RTUiLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUIzYVdSMGFEMGlOVEV5SWlCb1pXbG5hSFE5SWpVeE1pSWdkbWxsZDBKdmVEMGlNQ0F3SURJMU5pQXlOVFlpSUdacGJHdzlJaU0wUmpRMlJUVWlQZ29nSUNBZ1BHTnBjbU5zWlNCamVEMGlNVEk0SWlCamVUMGlNVEk0SWlCeVBTSTRNQ0lnWm1sc2JEMGlJell4TlRZMVJVVWlMejRLUEM5emRtYyssCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIKICAgIH0KICBdCn0=">
     <meta name="theme-color" content="#4F46E5">
-    
+
     <!-- External Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9072108391482416"
+        crossorigin="anonymous"></script>
+
     <!-- Custom CSS -->
     <style>
         .fade-in {
@@ -40,32 +48,45 @@
             transform: translateY(10px);
             transition: all 0.3s ease-in-out;
         }
+
         .fade-in.show {
             opacity: 1;
             transform: translateY(0);
         }
-        .unit-toggle, .lang-toggle {
+
+        .unit-toggle,
+        .lang-toggle {
             transition: all 0.3s ease;
         }
-        .unit-toggle.active, .lang-toggle.active {
+
+        .unit-toggle.active,
+        .lang-toggle.active {
             background-color: #4F46E5;
             color: white;
         }
+
         #bmiChart {
             max-height: 250px;
         }
-        .share-button, .action-button {
+
+        .share-button,
+        .action-button {
             transition: all 0.2s ease;
         }
-        .share-button:hover, .action-button:hover {
+
+        .share-button:hover,
+        .action-button:hover {
             transform: translateY(-2px);
         }
+
         .history-item {
             transition: all 0.2s ease;
         }
+
         .history-item:hover {
             background-color: #f8fafc;
         }
+
         .comparison-badge {
             display: inline-block;
             padding: 0.25rem 0.75rem;
@@ -73,6 +94,7 @@
             font-size: 0.75rem;
             font-weight: 600;
         }
+
         .install-prompt {
             position: fixed;
             bottom: 20px;
@@ -81,6 +103,7 @@
         }
     </style>
 </head>
+
 <body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
     <!-- PWA Install Prompt -->
     <div id="installPrompt" class="install-prompt hidden">
@@ -89,12 +112,15 @@
                 <span class="font-semibold" data-i18n="installApp">ติดตั้งแอป</span>
                 <button onclick="hideInstallPrompt()" class="text-white hover:text-gray-200">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
                     </svg>
                 </button>
             </div>
             <p class="text-sm mb-3" data-i18n="installAppDesc">ติดตั้งเป็นแอปบนมือถือเพื่อใช้งานง่ายขึ้น</p>
-            <button onclick="installPWA()" class="bg-white text-indigo-600 px-4 py-2 rounded font-medium text-sm w-full">
+            <button onclick="installPWA()"
+                class="bg-white text-indigo-600 px-4 py-2 rounded font-medium text-sm w-full">
                 <span data-i18n="install">ติดตั้ง</span>
             </button>
         </div>
@@ -105,24 +131,20 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div class="flex justify-between items-center">
                 <div class="text-center flex-1">
-                    <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2" data-i18n="mainTitle">🏥 เครื่องคำนวณ BMI Pro</h1>
-                    <p class="text-gray-600 text-sm sm:text-base" data-i18n="mainSubtitle">ตรวจสอบดัชนีมวลกายแบบครบครัน รองรับหน่วย kg/cm และ lb/ft/inch</p>
+                    <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2" data-i18n="mainTitle">🏥 เครื่องคำนวณ
+                        BMI Pro</h1>
+                    <p class="text-gray-600 text-sm sm:text-base" data-i18n="mainSubtitle">ตรวจสอบดัชนีมวลกายแบบครบครัน
+                        รองรับหน่วย kg/cm และ lb/ft/inch</p>
                 </div>
-                
+
                 <!-- Language Toggle -->
                 <div class="flex bg-gray-100 rounded-lg p-1">
-                    <button 
-                        id="thBtn" 
-                        class="lang-toggle active px-3 py-1 rounded-md font-medium text-sm"
-                        onclick="switchLanguage('th')"
-                    >
+                    <button id="thBtn" class="lang-toggle active px-3 py-1 rounded-md font-medium text-sm"
+                        onclick="switchLanguage('th')">
                         🇹🇭 TH
                     </button>
-                    <button 
-                        id="enBtn" 
-                        class="lang-toggle px-3 py-1 rounded-md font-medium text-sm"
-                        onclick="switchLanguage('en')"
-                    >
+                    <button id="enBtn" class="lang-toggle px-3 py-1 rounded-md font-medium text-sm"
+                        onclick="switchLanguage('en')">
                         🇬🇧 EN
                     </button>
                 </div>
@@ -132,29 +154,24 @@
 
     <!-- Main Content -->
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
+
         <!-- BMI Calculator Section -->
         <section class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8" id="calculator-section">
             <div class="text-center mb-6">
-                <h2 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2" data-i18n="calcTitle">คำนวณ BMI ของคุณ</h2>
+                <h2 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2" data-i18n="calcTitle">คำนวณ BMI ของคุณ
+                </h2>
                 <p class="text-gray-600" data-i18n="calcSubtitle">เลือกหน่วยและกรอกข้อมูลเพื่อตรวจสอบสุขภาพ</p>
             </div>
 
             <!-- Unit Toggle -->
             <div class="flex justify-center mb-6">
                 <div class="bg-gray-100 rounded-lg p-1 flex">
-                    <button 
-                        id="metricBtn" 
-                        class="unit-toggle active px-4 py-2 rounded-md font-medium text-sm"
-                        onclick="switchUnit('metric')"
-                    >
+                    <button id="metricBtn" class="unit-toggle active px-4 py-2 rounded-md font-medium text-sm"
+                        onclick="switchUnit('metric')">
                         kg / cm
                     </button>
-                    <button 
-                        id="imperialBtn" 
-                        class="unit-toggle px-4 py-2 rounded-md font-medium text-sm"
-                        onclick="switchUnit('imperial')"
-                    >
+                    <button id="imperialBtn" class="unit-toggle px-4 py-2 rounded-md font-medium text-sm"
+                        onclick="switchUnit('imperial')">
                         lb / ft/in
                     </button>
                 </div>
@@ -166,95 +183,60 @@
                 <div class="space-y-6">
                     <!-- Weight Input -->
                     <div class="space-y-2">
-                        <label for="weight" class="block text-sm font-medium text-gray-700" id="weightLabel" data-i18n="weightLabel">น้ำหนัก (กิโลกรัม)</label>
-                        <input 
-                            type="number" 
-                            id="weight" 
-                            placeholder="เช่น 65" 
-                            min="1" 
-                            max="500" 
-                            step="0.1"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                        >
+                        <label for="weight" class="block text-sm font-medium text-gray-700" id="weightLabel"
+                            data-i18n="weightLabel">น้ำหนัก (กิโลกรัม)</label>
+                        <input type="number" id="weight" placeholder="เช่น 65" min="1" max="500" step="0.1"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
                     </div>
 
                     <!-- Height Input (Metric) -->
                     <div id="metricHeight" class="space-y-2">
-                        <label for="height" class="block text-sm font-medium text-gray-700" data-i18n="heightLabel">ส่วนสูง (เซนติเมตร)</label>
-                        <input 
-                            type="number" 
-                            id="height" 
-                            placeholder="เช่น 170" 
-                            min="50" 
-                            max="300" 
-                            step="0.1"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                        >
+                        <label for="height" class="block text-sm font-medium text-gray-700"
+                            data-i18n="heightLabel">ส่วนสูง (เซนติเมตร)</label>
+                        <input type="number" id="height" placeholder="เช่น 170" min="50" max="300" step="0.1"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
                     </div>
 
                     <!-- Height Input (Imperial) -->
                     <div id="imperialHeight" class="space-y-2 hidden">
-                        <label class="block text-sm font-medium text-gray-700" data-i18n="heightImperialLabel">ส่วนสูง</label>
+                        <label class="block text-sm font-medium text-gray-700"
+                            data-i18n="heightImperialLabel">ส่วนสูง</label>
                         <div class="grid grid-cols-2 gap-3">
-                            <input 
-                                type="number" 
-                                id="heightFeet" 
-                                data-i18n-placeholder="feetPlaceholder"
-                                placeholder="ฟุต"
-                                min="3" 
-                                max="9" 
-                                step="1"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                            >
-                            <input 
-                                type="number" 
-                                id="heightInches" 
-                                data-i18n-placeholder="inchesPlaceholder"
-                                placeholder="นิ้ว"
-                                min="0" 
-                                max="11" 
-                                step="0.1"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                            >
+                            <input type="number" id="heightFeet" data-i18n-placeholder="feetPlaceholder"
+                                placeholder="ฟุต" min="3" max="9" step="1"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
+                            <input type="number" id="heightInches" data-i18n-placeholder="inchesPlaceholder"
+                                placeholder="นิ้ว" min="0" max="11" step="0.1"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
                         </div>
                     </div>
 
                     <!-- Optional Info -->
                     <div class="grid grid-cols-2 gap-4">
                         <div class="space-y-2">
-                            <label for="gender" class="block text-sm font-medium text-gray-700" data-i18n="genderLabel">เพศ (ไม่บังคับ)</label>
-                            <select 
-                                id="gender" 
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                            >
+                            <label for="gender" class="block text-sm font-medium text-gray-700"
+                                data-i18n="genderLabel">เพศ (ไม่บังคับ)</label>
+                            <select id="gender"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
                                 <option value="" data-i18n="selectGender">เลือกเพศ</option>
                                 <option value="male" data-i18n="male">ชาย</option>
                                 <option value="female" data-i18n="female">หญิง</option>
                             </select>
                         </div>
                         <div class="space-y-2">
-                            <label for="age" class="block text-sm font-medium text-gray-700" data-i18n="ageLabel">อายุ (ไม่บังคับ)</label>
-                            <input 
-                                type="number" 
-                                id="age" 
-                                data-i18n-placeholder="agePlaceholder"
-                                placeholder="ปี"
-                                min="1" 
-                                max="120" 
-                                step="1"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
-                            >
+                            <label for="age" class="block text-sm font-medium text-gray-700" data-i18n="ageLabel">อายุ
+                                (ไม่บังคับ)</label>
+                            <input type="number" id="age" data-i18n-placeholder="agePlaceholder" placeholder="ปี"
+                                min="1" max="120" step="1"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors">
                         </div>
                     </div>
 
                     <!-- Calculate Button -->
                     <div class="text-center">
-                        <button 
-                            id="calculateBtn" 
-                            onclick="calculateBMI()" 
+                        <button id="calculateBtn" onclick="calculateBMI()"
                             class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg w-full sm:w-auto"
-                            data-i18n="calculateBtn"
-                        >
+                            data-i18n="calculateBtn">
                             คำนวณ BMI
                         </button>
                     </div>
@@ -262,31 +244,38 @@
 
                 <!-- Right Column: BMI Reference Table -->
                 <div class="space-y-6">
-                    <h3 class="text-lg font-semibold text-gray-800 text-center" data-i18n="bmiTableTitle">ตารางเปรียบเทียบค่า BMI</h3>
+                    <h3 class="text-lg font-semibold text-gray-800 text-center" data-i18n="bmiTableTitle">
+                        ตารางเปรียบเทียบค่า BMI</h3>
                     <div class="overflow-x-auto">
                         <table class="w-full border-collapse border border-gray-300 rounded-lg overflow-hidden">
                             <thead class="bg-gray-50">
                                 <tr>
-                                    <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-700" data-i18n="bmiRange">ค่า BMI</th>
-                                    <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-700" data-i18n="interpretation">การตีความ</th>
+                                    <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-700"
+                                        data-i18n="bmiRange">ค่า BMI</th>
+                                    <th class="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-700"
+                                        data-i18n="interpretation">การตีความ</th>
                                 </tr>
                             </thead>
                             <tbody class="text-sm">
                                 <tr class="bg-blue-50">
                                     <td class="border border-gray-300 px-4 py-3 font-medium">&lt; 18.5</td>
-                                    <td class="border border-gray-300 px-4 py-3 text-blue-700" data-i18n="underweight">น้ำหนักน้อย</td>
+                                    <td class="border border-gray-300 px-4 py-3 text-blue-700" data-i18n="underweight">
+                                        น้ำหนักน้อย</td>
                                 </tr>
                                 <tr class="bg-green-50">
                                     <td class="border border-gray-300 px-4 py-3 font-medium">18.5 - 24.9</td>
-                                    <td class="border border-gray-300 px-4 py-3 text-green-700" data-i18n="normal">น้ำหนักปกติ</td>
+                                    <td class="border border-gray-300 px-4 py-3 text-green-700" data-i18n="normal">
+                                        น้ำหนักปกติ</td>
                                 </tr>
                                 <tr class="bg-yellow-50">
                                     <td class="border border-gray-300 px-4 py-3 font-medium">25.0 - 29.9</td>
-                                    <td class="border border-gray-300 px-4 py-3 text-yellow-700" data-i18n="overweight">น้ำหนักเกิน</td>
+                                    <td class="border border-gray-300 px-4 py-3 text-yellow-700" data-i18n="overweight">
+                                        น้ำหนักเกิน</td>
                                 </tr>
                                 <tr class="bg-red-50">
                                     <td class="border border-gray-300 px-4 py-3 font-medium">≥ 30.0</td>
-                                    <td class="border border-gray-300 px-4 py-3 text-red-700" data-i18n="obese">อ้วน</td>
+                                    <td class="border border-gray-300 px-4 py-3 text-red-700" data-i18n="obese">อ้วน
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -298,8 +287,9 @@
         <!-- Result Section -->
         <section id="result" class="fade-in hidden mb-8">
             <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8">
-                <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center" data-i18n="resultTitle">ผลลัพธ์ BMI ของคุณ</h3>
-                
+                <h3 class="text-xl font-semibold text-gray-800 mb-6 text-center" data-i18n="resultTitle">ผลลัพธ์ BMI
+                    ของคุณ</h3>
+
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <!-- BMI Result -->
                     <div class="text-center space-y-4">
@@ -308,55 +298,48 @@
                             <div class="text-lg font-medium mb-2" id="bmiCategory">-</div>
                             <div class="text-sm text-gray-600" id="bmiDescription">-</div>
                         </div>
-                        
+
                         <!-- Comparison with Average -->
                         <div id="comparisonSection" class="bg-blue-50 rounded-lg p-4 text-sm hidden">
                             <div class="font-semibold mb-2" data-i18n="comparisonTitle">เปรียบเทียบกับค่าเฉลี่ย</div>
                             <div id="comparisonText" class="text-blue-800"></div>
                         </div>
-                        
+
                         <!-- Personal Advice -->
                         <div id="personalAdvice" class="bg-green-50 rounded-lg p-4 text-sm text-green-800 hidden">
                             <strong data-i18n="personalAdviceTitle">คำแนะนำเฉพาะสำหรับคุณ:</strong>
                             <div id="adviceText" class="mt-2"></div>
                         </div>
-                        
+
                         <!-- Action Buttons -->
                         <div class="grid grid-cols-2 gap-3 mt-6">
-                            <button 
-                                onclick="shareResult()" 
+                            <button onclick="shareResult()"
                                 class="action-button bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md"
-                                data-i18n="copyResult"
-                            >
+                                data-i18n="copyResult">
                                 📋 คัดลอกผลลัพธ์
                             </button>
-                            <button 
-                                onclick="downloadPDF()" 
+                            <button onclick="downloadPDF()"
                                 class="action-button bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md"
-                                data-i18n="downloadPDF"
-                            >
+                                data-i18n="downloadPDF">
                                 📄 ดาวน์โหลด PDF
                             </button>
-                            <button 
-                                onclick="shareFacebook()" 
+                            <button onclick="shareFacebook()"
                                 class="action-button bg-blue-800 hover:bg-blue-900 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md"
-                                data-i18n="shareFacebook"
-                            >
+                                data-i18n="shareFacebook">
                                 📘 แชร์ Facebook
                             </button>
-                            <button 
-                                onclick="saveToHistory()" 
+                            <button onclick="saveToHistory()"
                                 class="action-button bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md"
-                                data-i18n="saveHistory"
-                            >
+                                data-i18n="saveHistory">
                                 💾 บันทึกประวัติ
                             </button>
                         </div>
                     </div>
-                    
+
                     <!-- BMI Chart -->
                     <div class="flex flex-col items-center">
-                        <h4 class="text-lg font-medium text-gray-700 mb-4" data-i18n="chartTitle">ตำแหน่ง BMI ของคุณ</h4>
+                        <h4 class="text-lg font-medium text-gray-700 mb-4" data-i18n="chartTitle">ตำแหน่ง BMI ของคุณ
+                        </h4>
                         <div class="w-full max-w-sm">
                             <canvas id="bmiChart" width="300" height="250"></canvas>
                         </div>
@@ -369,11 +352,8 @@
         <section id="historySection" class="bg-white rounded-xl shadow-lg p-6 sm:p-8 mb-8 hidden">
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-xl font-semibold text-gray-800" data-i18n="historyTitle">ประวัติการคำนวณ</h3>
-                <button 
-                    onclick="clearHistory()" 
-                    class="text-red-600 hover:text-red-700 text-sm font-medium"
-                    data-i18n="clearHistory"
-                >
+                <button onclick="clearHistory()" class="text-red-600 hover:text-red-700 text-sm font-medium"
+                    data-i18n="clearHistory">
                     🗑️ ล้างประวัติ
                 </button>
             </div>
@@ -384,7 +364,8 @@
         <section class="mb-8 hidden" id="adsense-section">
             <div class="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
                 <div class="text-gray-500 mb-2">📢 Google AdSense</div>
-                <div class="text-sm text-gray-400" data-i18n="adPlaceholder">พื้นที่สำหรับแสดงโฆษณา (728x90 หรือ Responsive)</div>
+                <div class="text-sm text-gray-400" data-i18n="adPlaceholder">พื้นที่สำหรับแสดงโฆษณา (728x90 หรือ
+                    Responsive)</div>
                 <div class="text-xs text-gray-300 mt-2"><!-- Ads here --></div>
             </div>
         </section>
@@ -396,44 +377,55 @@
                 <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">BMI คืออะไร?</h2>
                 <div class="prose prose-gray max-w-none">
                     <p class="text-gray-700 leading-relaxed mb-4">
-                        <strong>BMI (Body Mass Index)</strong> หรือ <strong>ดัชนีมวลกาย</strong> เป็นค่าที่ใช้วัดความสัมพันธ์ระหว่างน้ำหนักและส่วนสูงของร่างกาย 
-                        เพื่อประเมินว่าน้ำหนักของคุณอยู่ในเกณฑ์ปกติหรือไม่ โดยคำนวณจากสูตร BMI = น้ำหนัก (กก.) ÷ ส่วนสูง² (เมตร) 
+                        <strong>BMI (Body Mass Index)</strong> หรือ <strong>ดัชนีมวลกาย</strong>
+                        เป็นค่าที่ใช้วัดความสัมพันธ์ระหว่างน้ำหนักและส่วนสูงของร่างกาย
+                        เพื่อประเมินว่าน้ำหนักของคุณอยู่ในเกณฑ์ปกติหรือไม่ โดยคำนวณจากสูตร BMI = น้ำหนัก (กก.) ÷
+                        ส่วนสูง² (เมตร)
                         สำหรับระบบอิมพีเรียล สูตรจะเป็น BMI = (น้ำหนัก(ปอนด์) × 703) ÷ ส่วนสูง²(นิ้ว)
                     </p>
                     <p class="text-gray-700 leading-relaxed mb-4">
-                        การตีความค่า BMI แบ่งออกเป็น 4 ระดับหลัก คือ น้ำหนักน้อย (ต่ำกว่า 18.5), น้ำหนักปกติ (18.5-24.9), 
-                        น้ำหนักเกิน (25-29.9) และอ้วน (30 ขึ้นไป) เครื่องคำนวณของเรารองรับทั้งหน่วยเมตริก (kg/cm) และอิมพีเรียล (lb/ft/in) 
-                        พร้อมให้คำแนะนำเฉพาะบุคคลตามเพศและอายุ การรู้ค่า BMI ช่วยให้วางแผนดูแลสุขภาพได้อย่างเหมาะสม 
+                        การตีความค่า BMI แบ่งออกเป็น 4 ระดับหลัก คือ น้ำหนักน้อย (ต่ำกว่า 18.5), น้ำหนักปกติ
+                        (18.5-24.9),
+                        น้ำหนักเกิน (25-29.9) และอ้วน (30 ขึ้นไป) เครื่องคำนวณของเรารองรับทั้งหน่วยเมตริก (kg/cm)
+                        และอิมพีเรียล (lb/ft/in)
+                        พร้อมให้คำแนะนำเฉพาะบุคคลตามเพศและอายุ การรู้ค่า BMI ช่วยให้วางแผนดูแลสุขภาพได้อย่างเหมาะสม
                         แต่ควรใช้ร่วมกับการปรึกษาแพทย์สำหรับการประเมินที่แม่นยำยิ่งขึ้น
                     </p>
                 </div>
             </div>
-            
+
             <!-- English Article -->
             <div id="article-en" class="hidden">
                 <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">What is BMI?</h2>
                 <div class="prose prose-gray max-w-none">
                     <p class="text-gray-700 leading-relaxed mb-4">
-                        <strong>BMI (Body Mass Index)</strong> is a measurement that uses your height and weight to determine if your weight is within a healthy range. 
-                        It's calculated using the formula: BMI = weight (kg) ÷ height² (meters) for metric units, or BMI = (weight(lbs) × 703) ÷ height²(inches) for imperial units.
+                        <strong>BMI (Body Mass Index)</strong> is a measurement that uses your height and weight to
+                        determine if your weight is within a healthy range.
+                        It's calculated using the formula: BMI = weight (kg) ÷ height² (meters) for metric units, or BMI
+                        = (weight(lbs) × 703) ÷ height²(inches) for imperial units.
                     </p>
                     <p class="text-gray-700 leading-relaxed mb-4">
-                        BMI categories are typically divided into four main ranges: underweight (below 18.5), normal weight (18.5-24.9), 
-                        overweight (25-29.9), and obese (30 and above). Our calculator supports both metric (kg/cm) and imperial (lb/ft/in) units, 
-                        providing personalized recommendations based on gender and age. While BMI is a useful screening tool for weight categories 
-                        that may lead to health problems, it should be used alongside professional medical advice for accurate health assessment.
+                        BMI categories are typically divided into four main ranges: underweight (below 18.5), normal
+                        weight (18.5-24.9),
+                        overweight (25-29.9), and obese (30 and above). Our calculator supports both metric (kg/cm) and
+                        imperial (lb/ft/in) units,
+                        providing personalized recommendations based on gender and age. While BMI is a useful screening
+                        tool for weight categories
+                        that may lead to health problems, it should be used alongside professional medical advice for
+                        accurate health assessment.
                     </p>
                 </div>
             </div>
         </article>
-        
+
     </main>
 
     <!-- Footer -->
     <footer class="bg-white border-t border-gray-200 mt-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div class="text-center text-gray-600 text-sm">
-                <p>&copy; 2025 BMI Calculator Pro | <span data-i18n="footerDisclaimer">สำหรับการอ้างอิงเท่านั้น ไม่ทดแทนคำแนะนำทางการแพทย์</span></p>
+                <p>&copy; 2025 BMI Calculator Pro | <span data-i18n="footerDisclaimer">สำหรับการอ้างอิงเท่านั้น
+                        ไม่ทดแทนคำแนะนำทางการแพทย์</span></p>
             </div>
         </div>
     </footer>
@@ -448,11 +440,11 @@
                 // Page Meta
                 pageTitle: "เครื่องคำนวณ BMI ออนไลน์ฟรี - ตรวจสุขภาพดัชนีมวลกาย รองรับ kg/lb",
                 pageDescription: "เครื่องคำนวณ BMI ออนไลน์ฟรี รองรับหน่วย kg/cm และ lb/ft/inch พร้อมกราฟแสดงผล ตารางเปรียบเทียบ และคำแนะนำเฉพาะบุคคล",
-                
+
                 // Header
                 mainTitle: "🏥 เครื่องคำนวณ BMI Pro",
                 mainSubtitle: "ตรวจสอบดัชนีมวลกายแบบครบครัน รองรับหน่วย kg/cm และ lb/ft/inch",
-                
+
                 // Calculator
                 calcTitle: "คำนวณ BMI ของคุณ",
                 calcSubtitle: "เลือกหน่วยและกรอกข้อมูลเพื่อตรวจสอบสุขภาพ",
@@ -469,7 +461,7 @@
                 female: "หญิง",
                 agePlaceholder: "ปี",
                 calculateBtn: "คำนวณ BMI",
-                
+
                 // Table
                 bmiTableTitle: "ตารางเปรียบเทียบค่า BMI",
                 bmiRange: "ค่า BMI",
@@ -478,39 +470,39 @@
                 normal: "น้ำหนักปกติ",
                 overweight: "น้ำหนักเกิน",
                 obese: "อ้วน",
-                
+
                 // Results
                 resultTitle: "ผลลัพธ์ BMI ของคุณ",
                 chartTitle: "ตำแหน่ง BMI ของคุณ",
                 comparisonTitle: "เปรียบเทียบกับค่าเฉลี่ย",
                 personalAdviceTitle: "คำแนะนำเฉพาะสำหรับคุณ:",
-                
+
                 // Actions
                 copyResult: "📋 คัดลอกผลลัพธ์",
                 downloadPDF: "📄 ดาวน์โหลด PDF",
                 shareFacebook: "📘 แชร์ Facebook",
                 saveHistory: "💾 บันทึกประวัติ",
-                
+
                 // History
                 historyTitle: "ประวัติการคำนวณ",
                 clearHistory: "🗑️ ล้างประวัติ",
                 noHistory: "ยังไม่มีประวัติการคำนวณ",
-                
+
                 // PWA
                 installApp: "ติดตั้งแอป",
                 installAppDesc: "ติดตั้งเป็นแอปบนมือถือเพื่อใช้งานง่ายขึ้น",
                 install: "ติดตั้ง",
-                
+
                 // Misc
                 adPlaceholder: "พื้นที่สำหรับแสดงโฆษณา (728x90 หรือ Responsive)",
                 footerDisclaimer: "สำหรับการอ้างอิงเท่านั้น ไม่ทดแทนคำแนะนำทางการแพทย์",
-                
+
                 // BMI Categories
                 bmi_underweight: "น้ำหนักน้อย",
                 bmi_normal: "น้ำหนักปกติ",
                 bmi_overweight: "น้ำหนักเกิน",
                 bmi_obese: "อ้วน",
-                
+
                 // BMI Descriptions
                 desc_underweight: "คุณมีน้ำหนักน้อยกว่าเกณฑ์ปกติ ควรปรึกษาแพทย์เพื่อหาสาเหตุและวางแผนเพิ่มน้ำหนัก",
                 desc_normal: "ยินดีด้วย! น้ำหนักของคุณอยู่ในเกณฑ์ปกติ ควรรักษาน้ำหนักให้อยู่ในระดับนี้ต่อไป",
@@ -521,11 +513,11 @@
                 // Page Meta
                 pageTitle: "Free Online BMI Calculator - Health Body Mass Index Checker kg/lb",
                 pageDescription: "Free online BMI calculator supporting kg/cm and lb/ft/inch units with chart visualization, comparison table, and personalized recommendations",
-                
+
                 // Header
                 mainTitle: "🏥 BMI Calculator Pro",
                 mainSubtitle: "Comprehensive body mass index checker supporting kg/cm and lb/ft/inch units",
-                
+
                 // Calculator
                 calcTitle: "Calculate Your BMI",
                 calcSubtitle: "Select units and enter your information to check your health",
@@ -542,7 +534,7 @@
                 female: "Female",
                 agePlaceholder: "Years",
                 calculateBtn: "Calculate BMI",
-                
+
                 // Table
                 bmiTableTitle: "BMI Comparison Table",
                 bmiRange: "BMI Range",
@@ -551,39 +543,39 @@
                 normal: "Normal Weight",
                 overweight: "Overweight",
                 obese: "Obese",
-                
+
                 // Results
                 resultTitle: "Your BMI Results",
                 chartTitle: "Your BMI Position",
                 comparisonTitle: "Comparison with Average",
                 personalAdviceTitle: "Personal Recommendations:",
-                
+
                 // Actions
                 copyResult: "📋 Copy Result",
                 downloadPDF: "📄 Download PDF",
                 shareFacebook: "📘 Share Facebook",
                 saveHistory: "💾 Save History",
-                
+
                 // History
                 historyTitle: "Calculation History",
                 clearHistory: "🗑️ Clear History",
                 noHistory: "No calculation history yet",
-                
+
                 // PWA
                 installApp: "Install App",
                 installAppDesc: "Install as mobile app for easier access",
                 install: "Install",
-                
+
                 // Misc
                 adPlaceholder: "Advertisement space (728x90 or Responsive)",
                 footerDisclaimer: "For reference only, not a substitute for medical advice",
-                
+
                 // BMI Categories
                 bmi_underweight: "Underweight",
                 bmi_normal: "Normal Weight",
                 bmi_overweight: "Overweight",
                 bmi_obese: "Obese",
-                
+
                 // BMI Descriptions
                 desc_underweight: "You are underweight. Consider consulting a healthcare provider to determine the cause and plan for healthy weight gain.",
                 desc_normal: "Congratulations! Your weight is in the normal range. Maintain your current weight with a healthy lifestyle.",
@@ -600,7 +592,7 @@
         let bmiChart = null;
         let lastBMIResult = null;
         let deferredPrompt = null;
-        
+
         // Average BMI data by age and gender
         const bmiAverages = {
             male: {
@@ -614,19 +606,19 @@
         // ============================================================================
         // INITIALIZATION
         // ============================================================================
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Load saved preferences
             loadPreferences();
-            
+
             // Setup event listeners
             setupEventListeners();
-            
+
             // Load history
             loadHistory();
-            
+
             // Setup PWA
             setupPWA();
-            
+
             // Apply current language
             applyLanguage();
         });
@@ -636,27 +628,27 @@
         // ============================================================================
         function switchLanguage(lang) {
             currentLang = lang;
-            
+
             // Update UI
             document.getElementById('thBtn').classList.toggle('active', lang === 'th');
             document.getElementById('enBtn').classList.toggle('active', lang === 'en');
-            
+
             // Update HTML lang attribute
             document.documentElement.lang = lang;
-            
+
             // Apply translations
             applyLanguage();
-            
+
             // Save preference
             localStorage.setItem('bmi_lang', lang);
-            
+
             // Hide result when switching languages
             hideResult();
         }
 
         function applyLanguage() {
             const texts = i18n[currentLang];
-            
+
             // Update page meta
             document.getElementById('pageTitle').textContent = texts.pageTitle;
             document.getElementById('pageDescription').content = texts.pageDescription;
@@ -664,7 +656,7 @@
             document.getElementById('ogDescription').content = texts.pageDescription;
             document.getElementById('twitterTitle').content = texts.pageTitle;
             document.getElementById('twitterDescription').content = texts.pageDescription;
-            
+
             // Update all elements with data-i18n attribute
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
@@ -672,7 +664,7 @@
                     element.textContent = texts[key];
                 }
             });
-            
+
             // Update placeholders
             document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
                 const key = element.getAttribute('data-i18n-placeholder');
@@ -680,14 +672,14 @@
                     element.placeholder = texts[key];
                 }
             });
-            
+
             // Update weight label based on current unit
             updateWeightLabel();
-            
+
             // Show/hide articles based on language
             document.getElementById('article-th').classList.toggle('hidden', currentLang !== 'th');
             document.getElementById('article-en').classList.toggle('hidden', currentLang !== 'en');
-            
+
             // Update history if visible
             if (!document.getElementById('historySection').classList.contains('hidden')) {
                 displayHistory();
@@ -705,29 +697,29 @@
         // ============================================================================
         function switchUnit(unit) {
             currentUnit = unit;
-            
+
             // Update UI
             document.getElementById('metricBtn').classList.toggle('active', unit === 'metric');
             document.getElementById('imperialBtn').classList.toggle('active', unit === 'imperial');
-            
+
             // Toggle input fields
             document.getElementById('metricHeight').classList.toggle('hidden', unit !== 'metric');
             document.getElementById('imperialHeight').classList.toggle('hidden', unit !== 'imperial');
-            
+
             // Update labels and placeholders
             updateWeightLabel();
             const texts = i18n[currentLang];
-            
+
             if (unit === 'metric') {
                 document.getElementById('weight').placeholder = currentLang === 'th' ? 'เช่น 65' : 'e.g. 65';
             } else {
                 document.getElementById('weight').placeholder = currentLang === 'th' ? 'เช่น 143' : 'e.g. 143';
             }
-            
+
             // Clear inputs when switching
             clearInputs();
             hideResult();
-            
+
             // Save preference
             localStorage.setItem('bmi_unit', unit);
         }
@@ -744,38 +736,38 @@
         // ============================================================================
         function calculateBMI() {
             let weight, heightInMeters;
-            
+
             if (currentUnit === 'metric') {
                 weight = parseFloat(document.getElementById('weight').value);
                 const heightCm = parseFloat(document.getElementById('height').value);
-                
+
                 if (!weight || !heightCm || weight <= 0 || heightCm <= 0) {
                     const texts = i18n[currentLang];
                     alert(currentLang === 'th' ? 'กรุณากรอกน้ำหนักและส่วนสูงที่ถูกต้อง' : 'Please enter valid weight and height');
                     return;
                 }
-                
+
                 heightInMeters = heightCm / 100;
-                
+
             } else {
                 const weightLbs = parseFloat(document.getElementById('weight').value);
                 const feet = parseFloat(document.getElementById('heightFeet').value);
                 const inches = parseFloat(document.getElementById('heightInches').value) || 0;
-                
+
                 if (!weightLbs || !feet || weightLbs <= 0 || feet <= 0) {
                     alert(currentLang === 'th' ? 'กรุณากรอกน้ำหนักและส่วนสูงที่ถูกต้อง' : 'Please enter valid weight and height');
                     return;
                 }
-                
+
                 // Convert to metric
                 weight = weightLbs * 0.453592; // lbs to kg
                 const totalInches = (feet * 12) + inches;
                 heightInMeters = totalInches * 0.0254; // inches to meters
             }
-            
+
             // Calculate BMI
             const bmi = weight / (heightInMeters * heightInMeters);
-            
+
             // Store result
             lastBMIResult = {
                 bmi: bmi,
@@ -786,7 +778,7 @@
                 age: parseInt(document.getElementById('age').value),
                 timestamp: new Date().getTime()
             };
-            
+
             // Display results
             displayBMIResult(bmi);
         }
@@ -796,14 +788,14 @@
             const bmiValueDiv = document.getElementById('bmiValue');
             const bmiCategoryDiv = document.getElementById('bmiCategory');
             const bmiDescriptionDiv = document.getElementById('bmiDescription');
-            
+
             // Round BMI to 1 decimal place
             const roundedBMI = Math.round(bmi * 10) / 10;
-            
+
             // Determine BMI category and styling
             let category, description, colorClass, chartColor;
             const texts = i18n[currentLang];
-            
+
             if (bmi < 18.5) {
                 category = texts.bmi_underweight;
                 description = texts.desc_underweight;
@@ -825,34 +817,34 @@
                 colorClass = 'text-red-600';
                 chartColor = '#EF4444';
             }
-            
+
             // Update display
             bmiValueDiv.textContent = roundedBMI;
             bmiValueDiv.className = `text-4xl font-bold mb-2 ${colorClass}`;
             bmiCategoryDiv.textContent = category;
             bmiCategoryDiv.className = `text-lg font-medium mb-2 ${colorClass}`;
             bmiDescriptionDiv.textContent = description;
-            
+
             // Show comparison with average
             showComparison(bmi);
-            
+
             // Show personal advice
             showPersonalAdvice(bmi);
-            
+
             // Create BMI chart
             createBMIChart(bmi, chartColor);
-            
+
             // Show result with animation
             resultDiv.classList.remove('hidden');
             setTimeout(() => {
                 resultDiv.classList.add('show');
             }, 10);
-            
+
             // Scroll to result
             setTimeout(() => {
-                resultDiv.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'center' 
+                resultDiv.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
                 });
             }, 300);
         }
@@ -862,12 +854,12 @@
             const age = parseInt(document.getElementById('age').value);
             const comparisonSection = document.getElementById('comparisonSection');
             const comparisonText = document.getElementById('comparisonText');
-            
+
             if (!gender || !age) {
                 comparisonSection.classList.add('hidden');
                 return;
             }
-            
+
             // Determine age group
             let ageGroup;
             if (age >= 18 && age <= 24) ageGroup = '18-24';
@@ -879,11 +871,11 @@
                 comparisonSection.classList.add('hidden');
                 return;
             }
-            
+
             const avgBMI = bmiAverages[gender][ageGroup];
             const diff = bmi - avgBMI;
             const absDiff = Math.abs(diff);
-            
+
             let comparisonMsg;
             if (currentLang === 'th') {
                 if (absDiff < 1) {
@@ -903,7 +895,7 @@
                     comparisonMsg = `Your BMI is ${absDiff.toFixed(1)} points lower than the average for ${genderStr}s aged ${ageGroup} years (average: ${avgBMI.toFixed(1)})`;
                 }
             }
-            
+
             comparisonText.textContent = comparisonMsg;
             comparisonSection.classList.remove('hidden');
         }
@@ -913,14 +905,14 @@
             const age = parseInt(document.getElementById('age').value);
             const adviceDiv = document.getElementById('personalAdvice');
             const adviceText = document.getElementById('adviceText');
-            
+
             if (!gender && !age) {
                 adviceDiv.classList.add('hidden');
                 return;
             }
-            
+
             let advice = '';
-            
+
             if (currentLang === 'th') {
                 if (age && age < 18) {
                     advice = 'เนื่องจากคุณยังเป็นวัยรุ่น การตีความ BMI อาจแตกต่างจากผู้ใหญ่ ควรปรึกษาแพทย์เด็กเพื่อประเมินการเจริญเติบโตที่เหมาะสม';
@@ -946,7 +938,7 @@
                     advice = 'Good health doesn\'t depend solely on BMI. Consider regular exercise, balanced nutrition, and annual health check-ups.';
                 }
             }
-            
+
             if (advice) {
                 adviceText.textContent = advice;
                 adviceDiv.classList.remove('hidden');
@@ -960,28 +952,28 @@
         // ============================================================================
         function createBMIChart(userBMI, color) {
             const ctx = document.getElementById('bmiChart').getContext('2d');
-            
+
             // Destroy existing chart
             if (bmiChart) {
                 bmiChart.destroy();
             }
-            
+
             // Chart data
             const texts = i18n[currentLang];
             const categories = [texts.bmi_underweight, texts.bmi_normal, texts.bmi_overweight, texts.bmi_obese];
             const ranges = [18.5, 24.9, 29.9, 40];
             const colors = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444'];
             const backgroundColors = colors.map(c => c + '20'); // Add transparency
-            
+
             // Find user's category
             let userCategory = 0;
             if (userBMI >= 18.5 && userBMI < 25) userCategory = 1;
             else if (userBMI >= 25 && userBMI < 30) userCategory = 2;
             else if (userBMI >= 30) userCategory = 3;
-            
+
             // Highlight user's category
             const chartColors = backgroundColors.map((c, i) => i === userCategory ? colors[i] : c);
-            
+
             bmiChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
@@ -1003,7 +995,7 @@
                         },
                         tooltip: {
                             callbacks: {
-                                label: function(context) {
+                                label: function (context) {
                                     const ranges = ['< 18.5', '18.5 - 24.9', '25.0 - 29.9', '≥ 30.0'];
                                     return `${context.label}: ${ranges[context.dataIndex]}`;
                                 }
@@ -1022,14 +1014,14 @@
                     },
                     plugins: {
                         // Custom plugin to draw user BMI line
-                        afterDraw: function(chart) {
+                        afterDraw: function (chart) {
                             const ctx = chart.ctx;
                             const chartArea = chart.chartArea;
                             const yScale = chart.scales.y;
-                            
+
                             // Calculate Y position for user BMI
                             const yPos = yScale.getPixelForValue(userBMI);
-                            
+
                             // Draw line
                             ctx.save();
                             ctx.strokeStyle = color;
@@ -1039,7 +1031,7 @@
                             ctx.moveTo(chartArea.left, yPos);
                             ctx.lineTo(chartArea.right, yPos);
                             ctx.stroke();
-                            
+
                             // Draw label
                             ctx.fillStyle = color;
                             ctx.font = 'bold 12px Arial';
@@ -1057,29 +1049,29 @@
         // ============================================================================
         function saveToHistory() {
             if (!lastBMIResult) return;
-            
+
             let history = JSON.parse(localStorage.getItem('bmi_history') || '[]');
-            
+
             // Add current result to history
             history.unshift(lastBMIResult);
-            
+
             // Keep only last 10 records
             history = history.slice(0, 10);
-            
+
             // Save to localStorage
             localStorage.setItem('bmi_history', JSON.stringify(history));
-            
+
             // Show success message
             const msg = currentLang === 'th' ? 'บันทึกประวัติเรียบร้อยแล้ว!' : 'History saved successfully!';
             alert(msg);
-            
+
             // Update history display
             loadHistory();
         }
 
         function loadHistory() {
             const history = JSON.parse(localStorage.getItem('bmi_history') || '[]');
-            
+
             if (history.length > 0) {
                 document.getElementById('historySection').classList.remove('hidden');
                 displayHistory();
@@ -1090,45 +1082,44 @@
             const history = JSON.parse(localStorage.getItem('bmi_history') || '[]');
             const historyList = document.getElementById('historyList');
             const texts = i18n[currentLang];
-            
+
             if (history.length === 0) {
                 historyList.innerHTML = `<p class="text-gray-500 text-center">${texts.noHistory}</p>`;
                 return;
             }
-            
+
             historyList.innerHTML = history.map((record, index) => {
                 const date = new Date(record.timestamp).toLocaleDateString(currentLang === 'th' ? 'th-TH' : 'en-US');
                 const time = new Date(record.timestamp).toLocaleTimeString(currentLang === 'th' ? 'th-TH' : 'en-US', {
                     hour: '2-digit',
                     minute: '2-digit'
                 });
-                
+
                 let category;
                 if (record.bmi < 18.5) category = texts.bmi_underweight;
                 else if (record.bmi < 25) category = texts.bmi_normal;
                 else if (record.bmi < 30) category = texts.bmi_overweight;
                 else category = texts.bmi_obese;
-                
-                const weight = record.unit === 'metric' ? 
-                    `${(record.weight).toFixed(1)} kg` : 
+
+                const weight = record.unit === 'metric' ?
+                    `${(record.weight).toFixed(1)} kg` :
                     `${(record.weight / 0.453592).toFixed(1)} lbs`;
-                
-                const height = record.unit === 'metric' ? 
-                    `${record.height.toFixed(0)} cm` : 
+
+                const height = record.unit === 'metric' ?
+                    `${record.height.toFixed(0)} cm` :
                     `${Math.floor(record.height / 30.48)}'${Math.round((record.height % 30.48) / 2.54)}"`;
-                
+
                 return `
                     <div class="history-item bg-gray-50 rounded-lg p-4 border border-gray-200">
                         <div class="flex justify-between items-start">
                             <div class="flex-1">
                                 <div class="flex items-center space-x-4 mb-2">
                                     <span class="text-2xl font-bold">${record.bmi.toFixed(1)}</span>
-                                    <span class="px-3 py-1 rounded-full text-sm font-medium ${
-                                        record.bmi < 18.5 ? 'bg-blue-100 text-blue-800' :
-                                        record.bmi < 25 ? 'bg-green-100 text-green-800' :
-                                        record.bmi < 30 ? 'bg-yellow-100 text-yellow-800' :
-                                        'bg-red-100 text-red-800'
-                                    }">${category}</span>
+                                    <span class="px-3 py-1 rounded-full text-sm font-medium ${record.bmi < 18.5 ? 'bg-blue-100 text-blue-800' :
+                        record.bmi < 25 ? 'bg-green-100 text-green-800' :
+                            record.bmi < 30 ? 'bg-yellow-100 text-yellow-800' :
+                                'bg-red-100 text-red-800'
+                    }">${category}</span>
                                 </div>
                                 <div class="text-sm text-gray-600 mb-1">
                                     ${weight} • ${height}
@@ -1152,7 +1143,7 @@
             let history = JSON.parse(localStorage.getItem('bmi_history') || '[]');
             history.splice(index, 1);
             localStorage.setItem('bmi_history', JSON.stringify(history));
-            
+
             if (history.length === 0) {
                 document.getElementById('historySection').classList.add('hidden');
             } else {
@@ -1165,7 +1156,7 @@
             if (confirm(msg)) {
                 localStorage.removeItem('bmi_history');
                 document.getElementById('historySection').classList.add('hidden');
-                
+
                 const successMsg = currentLang === 'th' ? 'ล้างประวัติเรียบร้อยแล้ว!' : 'History cleared successfully!';
                 alert(successMsg);
             }
@@ -1176,20 +1167,20 @@
         // ============================================================================
         function shareResult() {
             if (!lastBMIResult) return;
-            
+
             const bmi = lastBMIResult.bmi.toFixed(1);
             let category;
             const texts = i18n[currentLang];
-            
+
             if (lastBMIResult.bmi < 18.5) category = texts.bmi_underweight;
             else if (lastBMIResult.bmi < 25) category = texts.bmi_normal;
             else if (lastBMIResult.bmi < 30) category = texts.bmi_overweight;
             else category = texts.bmi_obese;
-            
-            const text = currentLang === 'th' ? 
+
+            const text = currentLang === 'th' ?
                 `ผลการตรวจ BMI ของฉัน: ${bmi} (${category})\n\nคำนวณ BMI ของคุณได้ที่: ${window.location.href}` :
                 `My BMI Result: ${bmi} (${category})\n\nCalculate your BMI at: ${window.location.href}`;
-            
+
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text).then(() => {
                     const msg = currentLang === 'th' ? 'คัดลอกผลลัพธ์เรียบร้อยแล้ว!' : 'Result copied to clipboard!';
@@ -1210,21 +1201,21 @@
 
         function shareFacebook() {
             if (!lastBMIResult) return;
-            
+
             const url = encodeURIComponent(window.location.href);
-            const text = encodeURIComponent(currentLang === 'th' ? 
+            const text = encodeURIComponent(currentLang === 'th' ?
                 `มาตรวจ BMI กันเถอะ! ฉันเพิ่งได้ผลลัพธ์แล้ว` :
                 `Check your BMI! I just got my results`);
-            
+
             window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&quote=${text}`, '_blank', 'width=600,height=400');
         }
 
         function downloadPDF() {
             if (!lastBMIResult) return;
-            
+
             // Get result section
             const resultSection = document.getElementById('result');
-            
+
             // Use html2canvas to capture the result section
             html2canvas(resultSection, {
                 backgroundColor: '#ffffff',
@@ -1232,32 +1223,32 @@
             }).then(canvas => {
                 const { jsPDF } = window.jspdf;
                 const pdf = new jsPDF('p', 'mm', 'a4');
-                
+
                 // Add title
                 pdf.setFontSize(20);
                 const title = currentLang === 'th' ? 'ผลการตรวจ BMI' : 'BMI Test Results';
                 pdf.text(title, 20, 20);
-                
+
                 // Add date
                 pdf.setFontSize(12);
                 const date = new Date().toLocaleDateString(currentLang === 'th' ? 'th-TH' : 'en-US');
                 pdf.text(date, 20, 30);
-                
+
                 // Add canvas image
                 const imgData = canvas.toDataURL('image/png');
                 const imgWidth = 170;
                 const imgHeight = (canvas.height * imgWidth) / canvas.width;
-                
+
                 pdf.addImage(imgData, 'PNG', 20, 40, imgWidth, imgHeight);
-                
+
                 // Add disclaimer
                 pdf.setFontSize(10);
-                const disclaimer = currentLang === 'th' ? 
+                const disclaimer = currentLang === 'th' ?
                     'หมายเหตุ: ผลลัพธ์นี้สำหรับการอ้างอิงเท่านั้น ไม่ทดแทนคำแนะนำทางการแพทย์' :
                     'Note: This result is for reference only and does not substitute medical advice';
-                
+
                 pdf.text(disclaimer, 20, 280);
-                
+
                 // Save PDF
                 const filename = currentLang === 'th' ? 'BMI-ผลลัพธ์.pdf' : 'BMI-Results.pdf';
                 pdf.save(filename);
@@ -1271,10 +1262,10 @@
             // Register service worker
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('data:text/javascript;base64,Y29uc3QgQ0FDSEVfTkFNRSA9ICdibWktY2FsY3VsYXRvci12MSc7CmNvbnN0IHVybHNUb0NhY2hlID0gWwogICcvJwpdOwoKc2VsZi5hZGRFdmVudExpc3RlbmVyKCdpbnN0YWxsJywgZXZlbnQgPT4gewogIGV2ZW50LndhaXRVbnRpbCgKICAgIGNhY2hlcy5vcGVuKENBQ0hFX05BTUUpCiAgICAgIC50aGVuKGNhY2hlID0+IGNhY2hlLmFkZEFsbCh1cmxzVG9DYWNoZSkpCiAgKTsKfSk7CgpzZWxmLmFkZEV2ZW50TGlzdGVuZXIoJ2ZldGNoJywgZXZlbnQgPT4gewogIGV2ZW50LnJlc3BvbmRXaXRoKAogICAgY2FjaGVzLm1hdGNoKGV2ZW50LnJlcXVlc3QpCiAgICAgIC50aGVuKHJlc3BvbnNlID0+IHJlc3BvbnNlIHx8IGZldGNoKGV2ZW50LnJlcXVlc3QpKQogICk7Cn0pOw==')
-                .then(() => console.log('Service Worker registered'))
-                .catch(err => console.log('Service Worker registration failed'));
+                    .then(() => console.log('Service Worker registered'))
+                    .catch(err => console.log('Service Worker registration failed'));
             }
-            
+
             // Handle PWA install
             window.addEventListener('beforeinstallprompt', (e) => {
                 e.preventDefault();
@@ -1319,7 +1310,7 @@
             if (savedLang) {
                 switchLanguage(savedLang);
             }
-            
+
             // Load unit preference
             const savedUnit = localStorage.getItem('bmi_unit');
             if (savedUnit) {
@@ -1331,20 +1322,21 @@
             // Allow Enter key to trigger calculation
             const inputs = document.querySelectorAll('input[type="number"]');
             inputs.forEach(input => {
-                input.addEventListener('keypress', function(e) {
+                input.addEventListener('keypress', function (e) {
                     if (e.key === 'Enter') {
                         calculateBMI();
                     }
                 });
-                
+
                 // Hide result when inputs change
                 input.addEventListener('input', hideResult);
             });
-            
+
             // Also hide result when gender/age changes
             document.getElementById('gender').addEventListener('change', hideResult);
             document.getElementById('age').addEventListener('input', hideResult);
         }
     </script>
 </body>
-</html>
+
+</ht
